@@ -1,4 +1,4 @@
-export class Character {
+export abstract class Character {
   protected name: string; // インスタンスからはアクセス出来ないが、継承先からはアクセスできる
   private hp: number; // インスタンスからも継承先からもアクセス出来ない
 
@@ -11,7 +11,5 @@ export class Character {
     console.log(`${this.name}: HP ${this.hp}`);
   }
 
-  attack() {
-    console.log(`${this.name}は攻撃した!`)
-  }
+  abstract attack(): void
 }
