@@ -11,5 +11,12 @@ export abstract class Character {
     console.log(`${this.name}: HP ${this.hp}`);
   }
 
-  abstract attack(): void;
+  takeDamage(damage: number): void {
+    this.hp -= damage;
+    // this.hp = this.hp - damage;
+  }
+  isDead(): boolean {
+    return this.hp <= 0;
+  }
+  abstract attack(opponent: Character): void;
 }
